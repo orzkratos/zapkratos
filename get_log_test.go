@@ -7,18 +7,18 @@ import (
 )
 
 func TestZapOpt_GetHelper(t *testing.T) {
-	zapOpt := NewZapOpt(zaplog.LOGGER, NewOptions())
+	zapLog := NewZapLog(zaplog.LOGGER, NewOptions())
 
-	helper := zapOpt.GetHelper("test-get-helper")
+	helper := zapLog.GetHelper("test-get-helper")
 
 	helper.Info("woca", "[a]", "[b]", "[c]")
 	helper.Infow("k", "v", "k1", "v2")
 }
 
 func TestZapOpt_NewHelper(t *testing.T) {
-	zapOpt := NewZapOpt(zaplog.LOGGER, NewOptions())
+	zapLog := NewZapLog(zaplog.LOGGER, NewOptions())
 
-	helper := zapOpt.NewHelper("test-new-helper")
+	helper := zapLog.NewHelper("test-new-helper")
 
 	helper.Info("test-message")
 	helper.Infow("test", "message")

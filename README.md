@@ -1,7 +1,7 @@
 # zapkratos
 Replace Kratos logging with Zap logging.
 
-## Related Project
+## Related
 
 This project is related to [zapzhkratos](https://github.com/orzkratos/zapzhkratos). Both projects aim to integrate Zap logging with Kratos framework, providing enhanced logging capabilities.
 
