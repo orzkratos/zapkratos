@@ -42,8 +42,8 @@ func (a *LogImp) Log(logLevel log.Level, keyvals ...interface{}) error {
 	}
 
 	// 使用 zap.Logger 记录日志
-	zapCheckedEntry := a.zapLog.Check(zapLevel, a.msgTop)
-	if zapCheckedEntry == nil {
+	zapChecked := a.zapLog.Check(zapLevel, a.msgTop)
+	if zapChecked == nil {
 		return erero.Errorf("wrong-log-level-param zap=%v arg=%v", zapLevel, logLevel)
 	}
 
@@ -61,7 +61,7 @@ func (a *LogImp) Log(logLevel log.Level, keyvals ...interface{}) error {
 		fields = append(fields, zap.Any(newBK(len(keyvals)-1), keyvals[(len(keyvals)-1)]))
 	}
 
-	zapCheckedEntry.Write(fields...)
+	zapChecked.Write(fields...)
 	return nil
 }
 

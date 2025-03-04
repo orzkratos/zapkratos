@@ -22,22 +22,22 @@ func (T *Options) WithModuleKeyName(moduleKeyName string) *Options {
 	return T
 }
 
-type ZapLog struct {
+type ZapKratos struct {
 	zap *zaplog.Zap
 	opt *Options
 }
 
-func NewZapLog(zap *zaplog.Zap, opt *Options) *ZapLog {
-	return &ZapLog{
+func NewZapKratos(zap *zaplog.Zap, opt *Options) *ZapKratos {
+	return &ZapKratos{
 		zap: zap,
 		opt: opt,
 	}
 }
 
-func (A *ZapLog) GetZap() *zaplog.Zap {
+func (A *ZapKratos) GetZap() *zaplog.Zap {
 	return A.zap
 }
 
-func (A *ZapLog) SubZap() *zaplog.Zap {
+func (A *ZapKratos) SubZap() *zaplog.Zap {
 	return A.GetZap().SubZap2(A.opt.ModuleKeyName, filepath.Base(runpath.Skip(1)))
 }

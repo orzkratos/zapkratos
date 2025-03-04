@@ -7,18 +7,18 @@ import (
 )
 
 func TestNewZapLog(t *testing.T) {
-	zapLog := NewZapLog(zaplog.LOGGER, NewOptions())
+	zapKratos := NewZapKratos(zaplog.LOGGER, NewOptions())
 
-	subLog := zapLog.SubZap()
+	subLog := zapKratos.SubZap()
 
 	subLog.LOG.Info("abc")
 	subLog.SUG.Info("xyz")
 }
 
 func TestNewZapLog_WithModuleKeyName(t *testing.T) {
-	zapLog := NewZapLog(zaplog.LOGGER, NewOptions().WithModuleKeyName("module"))
+	zapKratos := NewZapKratos(zaplog.LOGGER, NewOptions().WithModuleKeyName("module"))
 
-	subLog := zapLog.SubZap()
+	subLog := zapKratos.SubZap()
 
 	subLog.LOG.Info("abc")
 	subLog.SUG.Info("xyz")
