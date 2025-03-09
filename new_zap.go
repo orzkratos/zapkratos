@@ -23,14 +23,14 @@ func (T *Options) WithModuleKeyName(moduleKeyName string) *Options {
 }
 
 type ZapKratos struct {
-	zap *zaplog.Zap
-	opt *Options
+	zap     *zaplog.Zap
+	options *Options
 }
 
-func NewZapKratos(zap *zaplog.Zap, opt *Options) *ZapKratos {
+func NewZapKratos(zap *zaplog.Zap, options *Options) *ZapKratos {
 	return &ZapKratos{
-		zap: zap,
-		opt: opt,
+		zap:     zap,
+		options: options,
 	}
 }
 
@@ -39,5 +39,5 @@ func (A *ZapKratos) GetZap() *zaplog.Zap {
 }
 
 func (A *ZapKratos) SubZap() *zaplog.Zap {
-	return A.GetZap().SubZap2(A.opt.ModuleKeyName, filepath.Base(runpath.Skip(1)))
+	return A.GetZap().SubZap2(A.options.ModuleKeyName, filepath.Base(runpath.Skip(1)))
 }

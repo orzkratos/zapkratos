@@ -3,7 +3,7 @@ module github.com/orzkratos/zapkratos
 go 1.22.6
 
 require (
-	github.com/go-kratos/kratos/v2 v2.8.3
+	github.com/go-kratos/kratos/v2 v2.8.4
 	github.com/yyle88/erero v1.0.19
 	github.com/yyle88/runpath v1.0.23
 	github.com/yyle88/zaplog v0.0.20
