@@ -8,7 +8,7 @@ import (
 )
 
 func TestNewLogImp(t *testing.T) {
-	logImp := NewLogImp(zaplog.LOG, "test-new-log-imp")
+	logImp := NewLogImp(zaplog.LOG, "TEST-NEW-LOG-TOP-MSG")
 
 	helper := log.NewHelper(logImp)
 

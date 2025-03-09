@@ -44,7 +44,7 @@ func (a *LogImp) Log(logLevel log.Level, keyvals ...interface{}) error {
 	// 使用 zap.Logger 记录日志
 	zapInstance := a.zapLog.Check(zapLevel, a.msgTop)
 	if zapInstance == nil {
-		return erero.Errorf("wrong-log-level-param zap=%v arg=%v", zapLevel, logLevel)
+		return erero.Errorf("WRONG-LOG-LEVEL-PARAM zap=%v arg=%v", zapLevel, logLevel)
 	}
 
 	var fields = make([]zap.Field, 0, (len(keyvals)+1)/2) //避免奇数
