@@ -39,5 +39,5 @@ func (A *ZapKratos) GetZap() *zaplog.Zap {
 }
 
 func (A *ZapKratos) SubZap() *zaplog.Zap {
-	return A.GetZap().SubZap2(A.options.ModuleKeyName, filepath.Base(runpath.Skip(1)))
+	return A.GetZap().NewZap(A.options.ModuleKeyName, filepath.Base(runpath.Skip(1)))
 }

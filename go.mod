@@ -6,7 +6,7 @@ require (
 	github.com/go-kratos/kratos/v2 v2.8.4
 	github.com/yyle88/erero v1.0.19
 	github.com/yyle88/runpath v1.0.23
-	github.com/yyle88/zaplog v0.0.20
+	github.com/yyle88/zaplog v0.0.21
 	go.uber.org/zap v1.27.0
 )
 
