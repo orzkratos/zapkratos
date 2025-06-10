@@ -6,7 +6,7 @@ import (
 	"github.com/yyle88/zaplog"
 )
 
-func TestNewZapLog(t *testing.T) {
+func TestNewZapKratos(t *testing.T) {
 	zapKratos := NewZapKratos(zaplog.LOGGER, NewOptions())
 
 	subLog := zapKratos.SubZap()
@@ -15,7 +15,7 @@ func TestNewZapLog(t *testing.T) {
 	subLog.SUG.Info("xyz")
 }
 
-func TestNewZapLog_WithModuleKeyName(t *testing.T) {
+func TestOptions_WithModuleKeyName(t *testing.T) {
 	zapKratos := NewZapKratos(zaplog.LOGGER, NewOptions().WithModuleKeyName("module"))
 
 	subLog := zapKratos.SubZap()
